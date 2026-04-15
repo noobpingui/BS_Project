@@ -37,3 +37,24 @@ async def get_player(tag: str) -> dict:
         
         # Return the response body parsed as a Python dictionary.
         return response.json()
+
+async def get_brawlers() -> dict:
+    """
+    Fetch all brawlers information from the Brawl Stars API.
+    """
+    
+    # Use httpx as an async HTTP client.
+    # 'async with' ensures the connection is properly closed after the request.
+    async with httpx.AsyncClient() as client:
+        response = await client.get(
+            f"{BASE_URL}/brawlers",
+            headers=HEADERS
+        )
+
+        # Raise an exception automatically if the API returned an error
+        # (e.g. 404 player not found, 403 invalid key).
+        # This stops execution here and lets FastAPI handle the error response.
+        response.raise_for_status()
+        
+        # Return the response body parsed as a Python dictionary.
+        return response.json()

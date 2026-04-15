@@ -19,7 +19,8 @@ What the flow will look like
   The browser never talks to Brawl Stars directly — FastAPI acts as the middleman and keeps your key hidden.
 
 # Project Structure Plan
-   Brawl_Stars_Project/
+``` bash  
+  Brawl_Stars_Project/
   ├── backend/
   │   ├── main.py              # FastAPI app — starts the server
   │   ├── config.py            # Loads the right .env based on APP_ENV
@@ -39,7 +40,7 @@ What the flow will look like
   ├── requirements.txt         # Python dependencies
   ├── .gitignore
   └── README.md
-
+```
 
 # How to run it
 Step 1 - create the virtual environment inside the project folder

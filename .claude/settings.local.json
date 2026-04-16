@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:publicapi.dev)",
+      "WebFetch(domain:brawlstats.readthedocs.io)",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}

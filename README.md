@@ -47,10 +47,12 @@ NOTE: A .venv keeps all the project dependencies isolated from your global Pytho
 
 1.1 Create venv
 python -m venv .venv
+
 1.2 Activate it
-# On Windows (PowerShell):
+
+- On Windows (PowerShell):
 .venv\Scripts\Activate.ps1
-# On Windows (Command Prompt):
+- On Windows (Command Prompt):
 .venv\Scripts\activate.bat
 
 NOTE: Once activated, your terminal will show (.venv) at the start of the line — that confirms you're inside the virtual environment. From that point, all pip install and python/uvicorn commands use the isolated environment.

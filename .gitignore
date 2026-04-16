@@ -5,6 +5,7 @@
 .env.dev
 .env.prod
 CLAUDE.md
+.claude
 
 # =======================
 # Python

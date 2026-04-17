@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from backend.config import APP_ENV
-from backend.routes import player
+from backend.routes import player, brawlers
 
 # Create the FastAPI application instance.
 # This is the core object that handles all incoming HTTP requests.
@@ -14,6 +14,9 @@ app = FastAPI(
 # All routes defined in player.py will be accessible under /player/...
 app.include_router(player.router, prefix="/player")
 
+# Register the brawlers router under the /brawlers prefix.
+# All routes defined in brawlers.py will be accessible under /brawlers/...
+app.include_router(brawlers.router, prefix="/brawlers")
 
 # Health check endpoint.
 # A simple route to confirm the server is running and show the active environment.

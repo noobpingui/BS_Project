@@ -44,48 +44,54 @@ What the flow will look like
 ```
 
 # How to run it
-Step 1 - create the virtual environment inside the project folder
+**Step 1** - create the virtual environment inside the project folder
 NOTE: A .venv keeps all the project dependencies isolated from your global Python installation. If you later work on another project with different package versions, they won't conflict.
 
-1.1 Create venv
+**Step 1.1** Create venv
 
-Windows:
+- Windows:
 	```bash
 	python -m venv .venv
 	```
 
-Debian/Ubuntu
+- Debian/Ubuntu
 	```bash
 	python3 -m venv .venv
 	```
 
-1.2 Activate it
+**Step 1.2** Activate venv
 
-- On Windows (PowerShell):
-.venv\Scripts\Activate.ps1
-
-- On Windows (Command Prompt):
-.venv\Scripts\activate.bat
-
-- On Debian/Ubuntu:
+- Windows (PowerShell):
 	```bash
-	source <venv_folder>/bin/activate
+	.venv\Scripts\Activate.ps1
+	```
+- Windows (Command Prompt):
+	```bash
+	.venv\Scripts\activate.bat
+	```
+- Debian/Ubuntu:
+	```bash
+	source .venv/bin/activate
 	```
 
-NOTE: Once activated, your terminal will show (.venv) at the start of the line — that confirms you're inside the virtual environment. From that point, all pip install and python/uvicorn commands use the isolated environment.
+**NOTE:** Once activated, your terminal will show (.venv) at the start of the line — that confirms you're inside the virtual environment. From that point, all pip install and python/uvicorn commands use the isolated environment.
 
-Step 2 — install dependencies into the .venv:
+**Step 2** — install dependencies into the .venv:
+```bash
 pip install -r requirements.txt
-
-Step 3 — add your API key to backend/.env.dev:
+```
+**Step 3** — add your API key to backend/.env.dev:
+```bash
 BRAWLSTARS_API_KEY=your_actual_key_here
-
-Step 4 — start the server:
+```
+**Step 4** — start the server:
+```bash
 uvicorn backend.main:app --reload
-
-Step 5 — test it in your browser or terminal:
-GET http://localhost:8000/health
-→ { "status": "ok", "env": "dev" }
+```
+**Step 5** — test it in your browser or terminal:
+```bash
+GET http://localhost:8000/health → { "status": "ok", "env": "dev" }
+```
 
 Also, you may want to try http://localhost:8000/docs, so that you can test the API endpoints through Swagger.
 

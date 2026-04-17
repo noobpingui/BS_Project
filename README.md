@@ -26,6 +26,7 @@ What the flow will look like
   │   ├── config.py            # Loads the right .env based on APP_ENV
   │   ├── routes/
   │   │   └── player.py        # Endpoint: search player by tag
+  │   │   └── brawlers.py      # Endpoint: get all brawlers details
   │   ├── services/
   │   │   └── brawlstars.py    # Handles all calls to the Brawl Stars API
   │   ├── .env.dev             # Never committed
@@ -47,14 +48,29 @@ Step 1 - create the virtual environment inside the project folder
 NOTE: A .venv keeps all the project dependencies isolated from your global Python installation. If you later work on another project with different package versions, they won't conflict.
 
 1.1 Create venv
-python -m venv .venv
+
+Windows:
+	```bash
+	python -m venv .venv
+	```
+
+Debian/Ubuntu
+	```bash
+	python3 -m venv .venv
+	```
 
 1.2 Activate it
 
 - On Windows (PowerShell):
 .venv\Scripts\Activate.ps1
+
 - On Windows (Command Prompt):
 .venv\Scripts\activate.bat
+
+- On Debian/Ubuntu:
+	```bash
+	source <venv_folder>/bin/activate
+	```
 
 NOTE: Once activated, your terminal will show (.venv) at the start of the line — that confirms you're inside the virtual environment. From that point, all pip install and python/uvicorn commands use the isolated environment.
 
